@@ -376,6 +376,11 @@ describe('registry : domain : validator', function(){
         expect(validate(requestParameters, componentParameters).isValid).to.be.true;
       });
 
+      it('should be valid when non mandatory parameters provided as null', function(){
+        var requestParameters = { name: null};
+        expect(validate(requestParameters, componentParameters).isValid).to.be.true;
+      });
+
       it('should be valid when non mandatory parameters provided in a valid format', function(done){
         var requestParameters = { name: 'Walter White' };
         expect(validate(requestParameters, componentParameters).isValid).to.be.true;
